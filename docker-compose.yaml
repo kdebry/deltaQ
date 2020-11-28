@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    container_name: ui
+    build: ./deltaQ_UI
+    restart: unless-stopped
+    ports:
+      - 5000:5000
+    depends_on:
+      - data
+  data:
+    container_name: data
+    build: ./deltaQ_Data
+    restart: unless-stopped
+    expose:
+      - 5001

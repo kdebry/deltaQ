@@ -1,16 +1,11 @@
-FROM python:3.8.5-alpine3.12
-
-WORKDIR /app
+FROM python:3.8-slim-buster
 
 COPY . /app
-
-RUN apk update && apk add libc-dev
-RUN apk add build-base
-RUN apk --no-cache add curl
+WORKDIR /app
 
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 EXPOSE 5000
-
-CMD ["run.py"]
+ENTRYPOINT [ "python" ] 
+CMD [ "run.py" ]
