@@ -16,7 +16,8 @@ def get_result():
         res = analyze(data)
 
         # Send back the result.
-        url="http://localhost:5000/result"
+        url="http://ui:5000/result"
+        #url="http://localhost:5000/result"
         header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
         r = requests.post(url, json=res, headers=header)
         print(r.status_code)

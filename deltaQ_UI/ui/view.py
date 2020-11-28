@@ -31,14 +31,14 @@ def result():
         # read file
         with open('data.json', 'r') as json_file:
             data=json.load(json_file)
-        #res = json.load(data)
         rdf = pd.read_json(data)
         return render_template('result.html', tables=[rdf.to_html(classes='data',header="true")])
 
 
 @app.route('/api', methods=['POST'])
 def analyze():
-    api_url = 'http://localhost:5001/api'
+    api_url = 'http://data:5001/api'
+    #api_url = 'http://localhost:5001/api'
     header = {'Content-type': 'application/json', 'Accept': 'text/plain'}
     r = requests.post(url=api_url, json=json_data, headers=header)
     print(r.status_code)

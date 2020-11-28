@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  web:
+  ui:
     container_name: ui
     build: ./deltaQ_UI
     restart: unless-stopped
@@ -9,9 +9,16 @@ services:
       - 5000:5000
     depends_on:
       - data
+    networks:
+      - app
   data:
     container_name: data
     build: ./deltaQ_Data
     restart: unless-stopped
     expose:
       - 5001
+    networks:
+      - app
+
+networks:
+  app:
