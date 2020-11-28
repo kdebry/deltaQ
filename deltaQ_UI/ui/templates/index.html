@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  
+  <body>
+    
+    <div class="title">
+      <h2>Upload the Data File</h2>
+    </div>
+
+    <form action = "http://localhost:5000/upload" method = "POST" enctype = "multipart/form-data">
+      <input type = "file" name = "file" />
+      <input type = "submit"/>
+    </form>
+
+    <div class="analyze">
+      <h2>Identify linearly dependent variables</h2>
+      <form action = "http://localhost:5000/api" method = "POST">
+	<p><input type="submit" value="Analyze" ></p>
+      </form>
+    </div>
+
+    <div class="result">
+      <h2>Get results</h2>
+      <form action = "http://localhost:5000/result" method = "POST">
+	<p><input type="submit" value="Result" ></p>
+      </form>
+    </div>
+
+  </body>
+
+</html>
