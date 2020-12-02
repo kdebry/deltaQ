@@ -1,6 +1,6 @@
 # Custom
-deltaQ_UI/venv
-deltaQ_Data/venv
+deltaQ_UI/venv/*
+deltaQ_Data/venv/*
 deltaQ_UI/ui/__pycache__ 
 deltaQ_Data/data/__pycache__
 
