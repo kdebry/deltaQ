@@ -20,7 +20,6 @@ def index():
 
 @app.route('/result', methods=['GET', 'POST'])
 def result():
-    # return render_template('result.html')
     if request.method == 'POST':
         res = request.get_json()
         
